@@ -1,1 +1,37 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: #fafafa;
+    color: #333;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: #222;
+}
+
+
+p {
+    margin-bottom: 1rem;
+}
+
+a {
+    color: #357edd;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}

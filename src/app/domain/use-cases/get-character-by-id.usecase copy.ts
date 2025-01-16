@@ -1,4 +1,4 @@
-import { ICharacterRepository } from '../interfaces/character.repository';
+import { CharacterInterface } from '../interfaces/character.interface';
 import { Character } from '../models/character.model';
 
 /**
@@ -6,7 +6,7 @@ import { Character } from '../models/character.model';
  * aplicando validaciones y lógica de negocio necesarias.
  */
 export class GetCharacterByIdUseCase {
-  constructor(private characterRepository: ICharacterRepository) {}
+  constructor(private characterRepository: CharacterInterface) {}
 
   public async execute(id: number): Promise<Character | null> {
     if (id <= 0) {

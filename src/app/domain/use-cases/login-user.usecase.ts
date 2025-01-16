@@ -1,4 +1,4 @@
-import { IUserRepository } from '../interfaces/user.repository';
+import { UserInterface } from '../interfaces/user.interface';
 import { User } from '../models/user.model';
 
 /**
@@ -6,7 +6,7 @@ import { User } from '../models/user.model';
  * aplicando validaciones de negocio antes de delegar al repositorio.
  */
 export class LoginUserUseCase {
-  constructor(private userRepository: IUserRepository) {}
+  constructor(private userRepository: UserInterface) {}
 
   /**
    * Ejecuta el flujo de login recibiendo credenciales básicas (username, password).

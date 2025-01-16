@@ -1,4 +1,4 @@
-import { ICharacterRepository } from '../interfaces/character.repository';
+import { CharacterInterface } from '../interfaces/character.interface';
 import { Character } from '../models/character.model';
 
 /**
@@ -6,7 +6,7 @@ import { Character } from '../models/character.model';
  * aislando al dominio de cualquier tecnología concreta (HTTP, etc.).
  */
 export class GetCharactersUseCase {
-  constructor(private characterRepository: ICharacterRepository) {}
+  constructor(private characterRepository: CharacterInterface) {}
 
   public async execute(): Promise<Character[]> {
     return this.characterRepository.getAllCharacters();

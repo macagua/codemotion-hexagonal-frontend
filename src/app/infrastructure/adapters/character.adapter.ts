@@ -1,19 +1,19 @@
 import { Injectable } from '@angular/core';
 import { firstValueFrom } from 'rxjs';
 import { RickAndMortyApiService } from '../api/rick-and-morty-api.service';
-import { ICharacterRepository } from '../../domain/interfaces/character.repository';
+import { CharacterInterface } from '../../domain/interfaces/character.interface';
 import { Character } from '../../domain/models/character.model';
 
 @Injectable({
   providedIn: 'root',
 })
-export class CharacterAdapter implements ICharacterRepository {
+export class CharacterAdapter implements CharacterInterface {
   constructor(private rickAndMortyApi: RickAndMortyApiService) {}
 
   async getAllCharacters(): Promise<Character[]> {
     try {
       const data = await firstValueFrom(this.rickAndMortyApi.getAllCharacters());
-      return data?.results?.map((item) => this.mapToCharacter(item)) || [];
+      return data?.map((item) => this.mapToCharacter(item)) || [];
     } catch (error) {
       console.error('[CharacterAdapter] Error al obtener todos los personajes:', error);
       return [];

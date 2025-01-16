@@ -1,0 +1,31 @@
+<button
+  class="floating-btn"
+  [ngClass]="{ connected: isConnected }"
+  (click)="onWalletButtonClick()"
+  [disabled]="loading"
+>
+  <span *ngIf="loading">Loading...</span>
+  <span *ngIf="!loading">
+    {{ isConnected ? "Wallet Details" : "Connect Wallet" }}
+  </span>
+</button>
+
+<button
+  *ngIf="isConnected"
+  class="claim-btn"
+  [disabled]="true"
+  (click)="onClaimNft()"
+>
+  {{ claimingNft ? "Claiming..." : "Claim NFT" }}
+</button>
+
+<div *ngIf="nftData" class="nft-popup">
+  <h3>{{ nftData.name }}</h3>
+  <img [src]="nftData.image" alt="{{ nftData.name }}" />
+  <p>{{ nftData.description }}</p>
+  <button (click)="closeNftPopup()">Close</button>
+</div>
+
+<div *ngIf="errorMessage" class="error-message">
+  {{ errorMessage }}
+</div>

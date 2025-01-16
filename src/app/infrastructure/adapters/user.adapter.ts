@@ -4,17 +4,17 @@ import { Injectable } from '@angular/core';
 
 import { LoginService } from '../api/login.service';
 import { firstValueFrom } from 'rxjs';
-import { IUserRepository } from '../../domain/interfaces/user.repository';
+import { UserInterface } from '../../domain/interfaces/user.interface';
 import { User } from '../../domain/models/user.model';
 
 /**
- * Implementa la interfaz IUserRepository usando un servicio que
+ * Implementa la interfaz UserInterface usando un servicio que
  * mockea el proceso de login, sin llamar a un endpoint real.
  */
 @Injectable({
   providedIn: 'root',
 })
-export class UserAdapter implements IUserRepository {
+export class UserAdapter implements UserInterface {
   constructor(private loginService: LoginService) {}
 
   /**

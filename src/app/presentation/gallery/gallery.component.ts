@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-
-
-/* Si quieres usar *ngFor o *ngIf, no olvides importar CommonModule */
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from '../../shared/header/header.component';
 import { CharacterPopupComponent } from '../../shared/popup/character-popup.component';
 import { Character } from '../../domain/models/character.model';
 import { CharacterAdapter } from '../../infrastructure/adapters/character.adapter';
 import { GetCharactersUseCase } from '../../domain/use-cases/get-characters.usecase';
-import { GetCharacterByIdUseCase } from '../../domain/use-cases/get-character-by-id.usecase';
+import { NftAdapter } from '../../infrastructure/adapters/nft.adapter';
+import { ClaimNftUseCase } from '../../domain/use-cases/claim-nft.usecase';
+import { NFT_ADAPTER } from '../../domain/interfaces/nft-adapter.inferface';
+import { ConvertIpfsUseCase } from '../../domain/use-cases/convert-ipfs.usecase';
+import { GetCharacterByIdUseCase } from '../../domain/use-cases/get-character-by-id.usecase copy';
 
 @Component({
   selector: 'app-gallery',
@@ -22,6 +23,11 @@ import { GetCharacterByIdUseCase } from '../../domain/use-cases/get-character-by
   ],
   templateUrl: './gallery.component.html',
   styleUrls: ['./gallery.component.css'],
+  providers: [
+    { provide: NFT_ADAPTER, useClass: NftAdapter },
+    ClaimNftUseCase,
+    ConvertIpfsUseCase 
+  ],
 })
 export class GalleryComponent implements OnInit {
   characters: Character[] = [];

@@ -5,20 +5,20 @@
 <div class="gallery-container">
   <div
     class="character-card"
-    *ngFor="let character of characters"
-    (click)="onCharacterClick(character.id)"
+    *ngFor="let pokemon of pokemons"
+    (click)="onCharacterClick(pokemon.id)"
   >
-    <img [src]="character.image" [alt]="character.name" />
-    <h3>{{ character.name }}</h3>
-    <p>Status: {{ character.status }}</p>
-    <p>Species: {{ character.species }}</p>
+    <img [src]="pokemon.image" [alt]="pokemon.image" />
+    <h3>{{ pokemon.id }}</h3>
+    <p>HP: {{ pokemon.hp }}</p>
+    <p>Attack: {{ pokemon.attack }}</p>
   </div>
 </div>
 
 <!-- Popup solo se muestra si showPopup es true -->
-<app-character-popup
+<app-pokemon-popup
   *ngIf="showPopup"
-  [character]="selectedCharacter"
+  [pokemon]="selectedPokemon"
   (close)="onClosePopup()"
-></app-character-popup>
+></app-pokemon-popup>
 <!-- <app-floating-wallet-button></app-floating-wallet-button> -->

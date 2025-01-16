@@ -11,7 +11,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
-export class RickAndMortyApiService {
+export class PokemonApiService {
   private readonly BASE_URL = '/api';
 
   constructor(private http: HttpClient) {}
@@ -19,15 +19,15 @@ export class RickAndMortyApiService {
   /**
    * Devuelve todos los personajes (Characters) desde /characters.
    */
-  getAllCharacters(): Observable< any[] > {
-    return this.http.get< any[]>(`${this.BASE_URL}/characters`);
+  getAllPokemons(): Observable< any[] > {
+    return this.http.get< any[]>(`${this.BASE_URL}/pokemons`);
   }
 
   /**
    * Devuelve la información de un personaje en concreto
    * según su ID desde /characters/:id.
    */
-  getCharacterById(id: number): Observable<any> {
-    return this.http.get<any>(`${this.BASE_URL}/characters/${id}`);
+  getPokemonById(id: number): Observable<any> {
+    return this.http.get<any>(`${this.BASE_URL}/pokemons/${id}`);
   }
 }

@@ -1,4 +1,17 @@
-# EyCodemotionFront
+# codemotion-hexagonal-frontend
+
+## Pre requirements
+
+- [Node Version Manager](https://github.com/nvm-sh/nvm) - nvm.
+- ``curl`` command or [Postman](https://www.postman.com/) software.
+- [Angular CLI](https://github.com/angular/angular-cli) version 19.0.7 or later.
+
+## Download
+
+```
+git clone github.com:macagua/codemotion-hexagonal-frontend.git
+cd codemotion-hexagonal-frontend
+```
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.7.
 
@@ -11,6 +24,22 @@ ng serve
 ```
 
 Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+
+## Testing
+
+To testing the Angular JS client, with the following links:
+
+### Login form
+
+http://localhost:4200/login
+
+### All Rick And Morty Characters
+
+http://localhost:4200/gallery
+
+### All Pokemon cards
+
+http://localhost:4200/pokemons
 
 ## Code scaffolding
 
@@ -53,6 +82,28 @@ ng e2e
 ```
 
 Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+
+## APIs
+
+This AngularJS client application have at least two APIs, which I describe below:
+
+### Rick And Morty Character API
+
+``/character``
+- Obtains all Rick and Morty characters.
+
+``/character/{id}``
+- Gets the information of a Rick and Morty character.
+
+### Pokemon API
+
+This AngularJS client application gets the information from the [backend](https://github.com/macagua/codemotion-hexagonal-backend#pokemon-api).
+
+``/api/pokemons``
+- Obtains all Pokemon records
+
+``/api/pokemon/{id}``
+- Obtains the information of a Pokemon
 
 ## Additional Resources
 

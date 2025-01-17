@@ -16,7 +16,7 @@ import { GetCharacterByIdUseCase } from '../../domain/use-cases/get-character-by
   // Importamos CommonModule para *ngFor, *ngIf
   // y nuestros componentes standalone
   imports: [
-    CommonModule, 
+    CommonModule,
     HeaderComponent, 
     CharacterPopupComponent
   ],
